@@ -1,0 +1,148 @@
+import { CardholderDef } from "@/types";
+
+/**
+ * 15 видов картхолдеров.
+ * Каждый описан параметрически (тон, прозрачность плёнки, наличие
+ * анимированного iridescent-слоя) — рендерится в CardholderLayer.tsx
+ * через CSS + canvas, без внешних растровых ассетов.
+ */
+export const CARDHOLDERS: CardholderDef[] = [
+  {
+    id: "clear",
+    label: "Прозрачный",
+    description: "Классический прозрачный ПВХ-карман",
+    baseTint: "rgba(255,255,255,0.06)",
+    filmOpacity: 0.14,
+    animated: false,
+    swatch: "linear-gradient(135deg, rgba(255,255,255,0.9), rgba(200,220,255,0.5))",
+  },
+  {
+    id: "glossy",
+    label: "Глянцевый",
+    description: "Яркие бликовые отражения",
+    baseTint: "rgba(255,255,255,0.10)",
+    filmOpacity: 0.22,
+    animated: false,
+    swatch: "linear-gradient(135deg, #ffffff, #d9e6ff 40%, #ffffff 60%, #cfe0ff)",
+  },
+  {
+    id: "matte",
+    label: "Матовый",
+    description: "Мягкое рассеянное покрытие без бликов",
+    baseTint: "rgba(230,225,240,0.18)",
+    filmOpacity: 0.30,
+    animated: false,
+    swatch: "linear-gradient(135deg, #eae6f2, #dcd6e8)",
+  },
+  {
+    id: "glitter",
+    label: "С блёстками",
+    description: "Мелкие частицы, переливаются при движении мыши",
+    baseTint: "rgba(255,255,255,0.08)",
+    filmOpacity: 0.20,
+    animated: true,
+    swatch: "radial-gradient(circle at 30% 30%, #fff 0 2px, transparent 3px), linear-gradient(135deg, #f7d9ff, #ffe9c2)",
+  },
+  {
+    id: "iridescent",
+    label: "Переливающийся",
+    description: "Плавный цветной перелив по всей плёнке",
+    baseTint: "rgba(255,255,255,0.05)",
+    filmOpacity: 0.28,
+    animated: true,
+    swatch: "linear-gradient(120deg, #ff9cc2, #b5eaff, #d9ffe0, #ffe9a8)",
+  },
+  {
+    id: "rainbow",
+    label: "Радужный",
+    description: "Чёткие радужные полосы",
+    baseTint: "rgba(255,255,255,0.04)",
+    filmOpacity: 0.26,
+    animated: true,
+    swatch: "linear-gradient(90deg, #ff6b6b, #ffd93d, #6bffb3, #6bd4ff, #b98bff)",
+  },
+  {
+    id: "holographic",
+    label: "Голографический",
+    description: "Настоящий iridescent-эффект, реагирует на курсор",
+    baseTint: "rgba(255,255,255,0.03)",
+    filmOpacity: 0.32,
+    animated: true,
+    swatch: "conic-gradient(from 90deg, #ff6fa5, #ffd76f, #7bf0d4, #8b5cf6, #ff6fa5)",
+  },
+  {
+    id: "hearts",
+    label: "Сердечки",
+    description: "Узор из сердечек на прозрачной плёнке",
+    baseTint: "rgba(255,214,232,0.10)",
+    filmOpacity: 0.18,
+    animated: false,
+    swatch: "radial-gradient(circle, #ff9cc2 0 3px, transparent 4px), #fff0f6",
+  },
+  {
+    id: "stars",
+    label: "Звёзды",
+    description: "Узор из звёздочек",
+    baseTint: "rgba(226,220,255,0.10)",
+    filmOpacity: 0.18,
+    animated: false,
+    swatch: "radial-gradient(circle, #b594ff 0 2px, transparent 3px), #f2edff",
+  },
+  {
+    id: "kpop",
+    label: "K-pop стиль",
+    description: "Смелые контрастные цвета, глянец",
+    baseTint: "rgba(20,20,30,0.10)",
+    filmOpacity: 0.24,
+    animated: false,
+    swatch: "linear-gradient(135deg, #1c1730, #8b5cf6, #ff6fa5)",
+  },
+  {
+    id: "kawaii",
+    label: "Милый kawaii",
+    description: "Пастельные тона и мягкие блики",
+    baseTint: "rgba(255,240,246,0.14)",
+    filmOpacity: 0.20,
+    animated: false,
+    swatch: "linear-gradient(135deg, #ffe3f0, #e3f0ff, #fff7d9)",
+  },
+  {
+    id: "black-minimal",
+    label: "Чёрный минимализм",
+    description: "Плотный чёрный полупрозрачный тон",
+    baseTint: "rgba(10,10,14,0.42)",
+    filmOpacity: 0.40,
+    animated: false,
+    swatch: "linear-gradient(135deg, #0c0c12, #26222f)",
+  },
+  {
+    id: "white-minimal",
+    label: "Белый минимализм",
+    description: "Чистый молочный полупрозрачный тон",
+    baseTint: "rgba(255,255,255,0.38)",
+    filmOpacity: 0.34,
+    animated: false,
+    swatch: "linear-gradient(135deg, #ffffff, #f1eef7)",
+  },
+  {
+    id: "colored-plastic",
+    label: "Цветной пластик",
+    description: "Насыщенный цветной полупрозрачный пластик",
+    baseTint: "rgba(139,92,246,0.22)",
+    filmOpacity: 0.36,
+    animated: false,
+    swatch: "linear-gradient(135deg, #8b5cf6, #ff6fa5)",
+  },
+  {
+    id: "framed-clear",
+    label: "Прозрачный с рамкой",
+    description: "Прозрачный карман с декоративной рамкой по краю",
+    baseTint: "rgba(255,255,255,0.05)",
+    filmOpacity: 0.16,
+    animated: false,
+    swatch: "linear-gradient(white, white) padding-box, linear-gradient(135deg,#ffd76f,#ff6fa5) border-box",
+  },
+];
+
+export const getCardholder = (id: string | null) =>
+  CARDHOLDERS.find((c) => c.id === id) ?? null;
